@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by Иван on 29.03.2015.
  */
 @Controller
-@RequestMapping("/index")
+//@RequestMapping("/index")
 public class IndexController {
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String indexPage() {

@@ -18,8 +18,7 @@
 
     <context:component-scan base-package="by.jd2.library.controller"/>
 
-    <bean id="tilesConfigurer"
-          class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
         <property name="definitions">
             <list>
                 <value>/WEB-INF/tiles.xml</value>
@@ -27,10 +26,10 @@
         </property>
     </bean>
 
-    <bean id="viewResolver"
-          class="org.springframework.web.servlet.view.tiles2.TilesViewResolver">
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.tiles2.TilesViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
     </bean>
+
 
     <!--<bean id="messageSource"-->
           <!--class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
