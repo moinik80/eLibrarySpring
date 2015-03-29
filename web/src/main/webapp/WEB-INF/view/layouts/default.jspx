@@ -7,8 +7,15 @@
 <jsp:output doctype-public="-//W3C//DTD XHTML 1.1//EN"
             doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"
             doctype-root-element="html" omit-xml-declaration="false"/>
-<jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
-    <tiles:insertAttribute name="header"/>
-    <tiles:insertAttribute name="body"/>
-    <tiles:insertAttribute name="footer"/>
-</jsp:root>
+    <jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
+    <head>
+        <title>Добро пожаловать в библиотеку</title>
+        <link rel="stylesheet" type="text/css" href="../../../assests/css/web.css"/>
+    </head>
+    <body>
+        <tiles:insertAttribute name="header"/>
+        <tiles:insertAttribute name="body"/>
+        <tiles:insertAttribute name="footer"/>
+    </body>
+</html>
+
