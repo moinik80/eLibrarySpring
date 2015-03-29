@@ -1,0 +1,21 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:output omit-xml-declaration="true"/>
+    <jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
+    <div id="login">
+        <!-- message login error -->
+        <h5>${sessionScope.error}</h5>
+        <form method = "post" action = "/controller">
+            <input type = "hidden" name = "page" value = "Login">
+            <fieldset>
+                <legend>Вход в систему</legend>
+                <div>
+                    <input name = "email" type = "text"/></br>
+                    <input name = "password" type = "password"/></br>
+                    <input id = "login_submit" type = "submit" value = "Login">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</jsp:root>
