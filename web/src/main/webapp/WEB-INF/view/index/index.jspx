@@ -6,7 +6,7 @@
     <div id="login">
         <!-- message login error -->
         <h5>${sessionScope.error}</h5>
-        <form method = "post" action = "/controller">
+        <form method = "post" action = "/books.form">
             <input type = "hidden" name = "page" value = "Login"/>
             <fieldset>
                 <legend>Вход в систему</legend>

@@ -15,4 +15,9 @@
         <put-attribute name="body" value="/WEB-INF/view/index/index.jspx"/>
     </definition>
 
+    <definition name="books" extends="default">
+        <put-attribute name="title" value="Books list"/>
+        <put-attribute name="body" value="/WEB-INF/view/book/books.jspx"/>
+    </definition>
+
 </tiles-definitions>
