@@ -4,4 +4,5 @@ import java.util.List;
 
 public interface IBookDao<T> extends Dao<T> {
     List<T> getBooks();
+    List<String> getAuthors();
 }

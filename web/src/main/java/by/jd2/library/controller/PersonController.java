@@ -1,7 +1,7 @@
 package by.jd2.library.controller;
 
-import by.jd2.library.pojos.Book;
-import by.jd2.library.services.IBookService;
+import by.jd2.library.pojos.Person;
+import by.jd2.library.services.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,18 +11,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
-public class BookController {
+public class PersonController {
     @Autowired(required = true)
-    private IBookService bookService;
+    private IPersonService personService;
 
-    @RequestMapping(value = "/books", method = RequestMethod.GET)
-    public String booksPage(ModelMap model) {
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public String usersController(ModelMap model)
+    {
         fillModel(model);
-        return "books";
+        return "users";
     }
 
     private void fillModel(ModelMap model) {
-        List<Book> list = bookService.getBooks();
-        model.put("books", list);
+        List<Person> list = personService.getPersons();
+        model.put("users", list);
     }
 }

@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
-public class BookController {
+public class AuthorController {
     @Autowired(required = true)
     private IBookService bookService;
 
-    @RequestMapping(value = "/books", method = RequestMethod.GET)
-    public String booksPage(ModelMap model) {
+    @RequestMapping(value = "/authors", method = RequestMethod.GET)
+    public String authorsPage(ModelMap model) {
         fillModel(model);
-        return "books";
+        return "authors";
     }
 
     private void fillModel(ModelMap model) {
         List<Book> list = bookService.getBooks();
-        model.put("books", list);
+        model.put("authors", list);
     }
 }

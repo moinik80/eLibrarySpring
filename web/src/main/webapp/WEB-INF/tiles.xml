@@ -3,21 +3,52 @@
         "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
         "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
+
     <definition name="default" template="/WEB-INF/view/layouts/default.jspx">
         <put-attribute name="title" value=""/>
         <put-attribute name="header" value="/WEB-INF/view/common/header.jspx"/>
+        <put-attribute name="login" value=""/>
+        <put-attribute name="menu" value=""/>
         <put-attribute name="body" value=""/>
         <put-attribute name="footer" value="/WEB-INF/view/common/footer.jspx"/>
     </definition>
 
     <definition name="index" extends="default">
-        <put-attribute name="title" value="Welcome in Library"/>
+        <put-attribute name="title" value="Введите, пожалуйста, пароль"/>
         <put-attribute name="body" value="/WEB-INF/view/index/index.jspx"/>
     </definition>
 
     <definition name="books" extends="default">
         <put-attribute name="title" value="Books list"/>
         <put-attribute name="body" value="/WEB-INF/view/book/books.jspx"/>
+    </definition>
+
+    <definition name="welcome" extends="default">
+        <put-attribute name="title" value="Добро пожаловать"/>
+        <put-attribute name="login" value="/WEB-INF/view/common/login.jspx"/>
+        <put-attribute name="menu" value="/WEB-INF/view/common/menu.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/view/welcome/welcome.jspx"/>
+    </definition>
+
+    <definition name="authors" extends="default">
+        <put-attribute name="title" value="Авторы"/>
+        <put-attribute name="login" value="/WEB-INF/view/common/login.jspx"/>
+        <put-attribute name="menu" value="/WEB-INF/view/common/menu.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/view/book/authors.jspx"/>
+    </definition>
+
+    <definition name="categories" extends="default">
+        <put-attribute name="title" value="Категории"/>
+        <put-attribute name="login" value="/WEB-INF/view/common/login.jspx"/>
+        <put-attribute name="menu" value="/WEB-INF/view/common/menu.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/view/book/categories.jspx"/>
+    </definition>
+
+    <definition name="users" extends="default">
+        <put-attribute name="title" value="Пользователи"/>
+        <put-attribute name="login" value="/WEB-INF/view/common/login.jspx"/>
+        <put-attribute name="menu" value="/WEB-INF/view/common/menu.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/view/person/users.jspx"/>
     </definition>
 
 </tiles-definitions>

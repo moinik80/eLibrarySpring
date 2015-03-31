@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IBookService {
     List<Book> getBooks();
+    List<String> getAuthors();
 }

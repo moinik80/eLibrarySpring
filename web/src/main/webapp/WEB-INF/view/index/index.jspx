@@ -6,13 +6,14 @@
     <div id="login">
         <!-- message login error -->
         <h5>${sessionScope.error}</h5>
-        <form method = "post" action = "/books.form">
+        <!--<form method = "post" action = "/j_spring_security_check">-->
+        <form method = "post" action = "/welcome.form">
             <input type = "hidden" name = "page" value = "Login"/>
             <fieldset>
                 <legend>Вход в систему</legend>
                 <div>
-                    <input name = "email" type = "text"/><br/>
-                    <input name = "password" type = "password"/><br/>
+                    <input name = "j_username" type = "text"/><br/>
+                    <input name = "j_password" type = "password"/><br/>
                     <input id = "login_submit" type = "submit" value = "Login"/>
                 </div>
             </fieldset>

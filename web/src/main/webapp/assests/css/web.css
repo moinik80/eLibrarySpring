@@ -75,19 +75,21 @@ h1
     text-align: right;
 }
 
-#page /*в нем размещается меню, контент и окно отзывов*/
-{
-    position:relative;
-    top:90px; /* отступ сверху от края */
-}
+/*#page *//*в нем размещается меню, контент*/
+/*{*/
+    /*position:relative;*/
+    /*top:90px; *//* отступ сверху от края */
+/*}*/
 
-#page div
-{
-    position: absolute;
-}
+/*#page div*/
+/*{*/
+    /*position: absolute;*/
+/*}*/
 
 #menu /* Левая колонка */
 {
+    position: absolute;
+    top:90px;
     border: 1px solid #333; /* Параметры рамки вокруг */
     width: 200px; /* Ширина колонки */
     padding: 5px; /* Поля вокруг текста */
@@ -107,6 +109,8 @@ h1
 
 #content  /*Центральная колонка*/
  {
+    position: absolute;
+    top:90px;
     width: 70%;
     margin: 10px; /*Значения отступов */
     padding: 5px; /* Поля вокруг текста */

@@ -1,7 +1,7 @@
 package by.jd2.library.services;
 
-import by.jd2.library.dao.IBookDao;
-import by.jd2.library.pojos.Book;
+import by.jd2.library.dao.IPersonDao;
+import by.jd2.library.pojos.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -11,18 +11,14 @@ import java.util.List;
 
 @Service
 @Transactional(propagation = Propagation.REQUIRED)
-public class BookService implements IBookService {
+public class PersonService extends BaseService<Person> implements IPersonService {
 
     @Autowired
-    IBookDao bookDao;
+    IPersonDao personDao;
+
 
     @Override
-    public List<Book> getBooks() {
-        return bookDao.getBooks();
-    }
-
-    @Override
-    public List<String> getAuthors() {
-        return bookDao.getAuthors();
+    public List<Person> getPersons() {
+        return personDao.getPersons();
     }
 }
