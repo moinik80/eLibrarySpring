@@ -18,8 +18,7 @@ public class BookDao extends BaseDao<Book> implements IBookDao<Book> {
 
     @Override
 //    return list Book from database
-    public List<Book> getBooks() {
-        String hql = "FROM Book";
+    public List<Book> getBooks(String hql) {
         return getSession().createQuery(hql).list();
     }
 

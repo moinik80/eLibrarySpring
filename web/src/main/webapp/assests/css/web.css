@@ -21,6 +21,23 @@ h1
     width: 100%; /* Ширина слоя */
 }
 
+#head span
+{
+    font-size: 12px; /* Размер шрифта */
+    font-weight: bold; /* Жирное начертание */
+    margin: 0; /* Убираем отступы */
+    color: #fc6; /* Цвет текста */
+    vertical-align: bottom;
+    float: right;
+    margin-right: 25px;
+}
+
+#head span a
+{
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+    color: #fc6;
+}
+
 #foot /* Нижний блок */
 {
     background: #333; /* Цвет фона */
@@ -71,7 +88,7 @@ h1
     font-weight: bold; /* Жирное начертание */
     margin: 10px 10px 0px 10px; /* Значения отступов */
     right: 0px;
-    top: 55px;
+    top: 75px;
     text-align: right;
 }
 
@@ -96,7 +113,7 @@ h1
     margin: 5px; /* Значения отступов */
 }
 
-#menu input
+#menu button
 {
     width: 95%;
     margin: 5px;
@@ -156,8 +173,9 @@ h1
 
 .img_sort
 {
+    float: right;
     background-color: cornflowerblue;
-    margin-top: 8px;
+    margin-top: 4px;
     margin-right: 5px;
 }
 

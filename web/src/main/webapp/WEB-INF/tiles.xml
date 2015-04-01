@@ -28,6 +28,22 @@
         <put-attribute name="body" value="/WEB-INF/view/book/books.jspx"/>
     </definition>
 
+    <!--add book-->
+    <definition name="addBook" extends="default">
+        <put-attribute name="title" value="Добавить книгу"/>
+        <put-attribute name="login" value="/WEB-INF/view/common/login.jspx"/>
+        <put-attribute name="menu" value="/WEB-INF/view/common/menu.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/view/book/addBook.jspx"/>
+    </definition>
+
+    <!--edit book-->
+    <definition name="editBook" extends="default">
+        <put-attribute name="title" value="Редактировать книгу"/>
+        <put-attribute name="login" value="/WEB-INF/view/common/login.jspx"/>
+        <put-attribute name="menu" value="/WEB-INF/view/common/menu.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/view/book/editBook.jspx"/>
+    </definition>
+
     <!--page after authorisation-->
     <definition name="welcome" extends="default">
         <put-attribute name="title" value="Добро пожаловать"/>

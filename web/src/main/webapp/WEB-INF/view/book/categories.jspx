@@ -11,7 +11,7 @@
         <table class="output" align="center">
             <tr class="t_head">
                 <td>№</td>
-                <td>Категория</td>
+                <td><spring:message code="page.table_category"/> </td>
             </tr>
             <c:forEach var="i" begin="0" end="${categories.size() - 1}">
                 <tr class="t_row">

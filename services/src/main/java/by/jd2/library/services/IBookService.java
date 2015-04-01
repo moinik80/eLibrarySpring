@@ -5,6 +5,6 @@ package by.jd2.library.services;
 import java.util.List;
 
 public interface IBookService<T> extends IService<T>{
-    List<T> getBooks();
+    List<T> getBooks(String parametersSort);
     List<String> getAuthors();
 }

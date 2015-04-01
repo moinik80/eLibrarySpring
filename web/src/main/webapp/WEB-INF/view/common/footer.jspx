@@ -6,6 +6,7 @@
           version="2.0">
 
             <div id = "foot">
-                Copyright &copy; Иван Лубинский
+                <!--Copyright &copy; Иван Лубинский-->
+                Copyright <spring:message code="page.developer"/>
             </div>
 </jsp:root>

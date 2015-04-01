@@ -2,7 +2,8 @@
 
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
           xmlns="http://www.w3.org/1999/xhtml"
-          xmlns:spring="http://www.springframework.org/tags" version="2.0">
+          xmlns:spring="http://www.springframework.org/tags"
+          version="2.0">
     <jsp:output omit-xml-declaration="true"/>
     <jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
     <div id="login">
@@ -15,7 +16,7 @@
         <form method = "post" action = "/welcome.form">
             <input type = "hidden" name = "page" value = "Login"/>
             <fieldset>
-                <legend>Вход в систему</legend>
+                <legend><spring:message code="page.log_in"/></legend>
                 <div>
                     <input name = "j_username" type = "text"/><br/>
                     <input name = "j_password" type = "password"/><br/>

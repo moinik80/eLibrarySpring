@@ -2,12 +2,21 @@
 
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
           xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:spring="http://www.springframework.org/tags"
           xmlns:c="http://java.sun.com/jsp/jstl/core"
           version="2.0">
     <div id="menu">
-        <a href="/books.form"><input type="button" name="books" value="Книги"/></a>
-        <a href="/categories.form"><input type="button" name="categories" value="Категории"/></a>
-        <a href="/authors.form"><input type="button" name="authors" value="Авторы"/></a>
-        <a href="/users.form"><input type="button" name="readers" value="Читатели"/></a>
+        <a href="/books/books/up.form"><button>
+            <spring:message code="page.menu_books"/>
+        </button></a>
+        <a href="/categories.form"><button>
+            <spring:message code="page.menu_categories"/>
+        </button></a>
+        <a href="/authors.form"><button>
+            <spring:message code="page.menu_authors"/>
+        </button></a>
+        <a href="/users.form"><button>
+            <spring:message code="page.menu_users"/>
+        </button></a>
     </div>
 </jsp:root>

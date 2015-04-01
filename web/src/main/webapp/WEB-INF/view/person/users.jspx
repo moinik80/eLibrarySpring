@@ -14,8 +14,8 @@
         <table class="output" align="center">
             <tr class="t_head">
                 <td>№</td>
-                <td>Читатель</td>
-                <td>Статус</td>
+                <td><spring:message code="page.table_user"/></td>
+                <td><spring:message code="page.table_status"/></td>
             </tr>
             <c:forEach var="i" begin="0" end="${users.size() - 1}">
                 <tr class="t_row">
