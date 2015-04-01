@@ -16,6 +16,7 @@
 
     <import resource="classpath*:beans-dao.xml"/>
 
+    <!--where search beans with service-->
     <context:component-scan base-package="by.jd2.library.services"/>
 
     <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">

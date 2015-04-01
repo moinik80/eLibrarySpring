@@ -1,16 +1,28 @@
+<!--page with list books-->
+
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
           xmlns="http://www.w3.org/1999/xhtml"
-          version="2.0"
-          xmlns:c="http://java.sun.com/jsp/jstl/core">
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          version="2.0">
     <jsp:output omit-xml-declaration="true"/>
     <jsp:directive.page pageEncoding="UTF-8"
                         contentType="text/html; UTF-8"/>
     <div id="page">
         <div id="content">
-            <c:forEach var="book" items="${books}">
-                ${book.bookName}<br/>
-            </c:forEach>
+            <table class="output" align="center">
+                <tr class="t_head">
+                    <td>№</td>
+                    <td>Книга</td>
+                    <td>Автор</td>
+                </tr>
+                <c:forEach var="i" begin="0" end="${books.size() - 1}">
+                    <tr class="t_row">
+                        <td>${i + 1}</td>
+                        <td>${books[i].bookName}</td>
+                        <td>${books[i].bookAuthor}</td>
+                    </tr>
+                </c:forEach>
+            </table>
         </div>
     </div>
-
 </jsp:root>

@@ -17,17 +17,16 @@ public class BookDao extends BaseDao<Book> implements IBookDao<Book> {
     }
 
     @Override
+//    return list Book from database
     public List<Book> getBooks() {
         String hql = "FROM Book";
-//        Query query = getSession().createQuery(hql);
-
         return getSession().createQuery(hql).list();
     }
 
+    //    return list authors from entity Book from database
     @Override
     public List<String> getAuthors() {
-        String hql = "bookAuthor FROM Book";
-
+        String hql = "SELECT DISTINCT bookAuthor FROM Book";
         return getSession().createQuery(hql).list();
     }
 }

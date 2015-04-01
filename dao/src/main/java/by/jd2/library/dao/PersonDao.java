@@ -12,6 +12,7 @@ public class PersonDao extends BaseDao<Person> implements IPersonDao<Person> {
     @Autowired
     public PersonDao(SessionFactory sessionFactory) {super(sessionFactory);}
 
+//    return list Person from database
     @Override
     public List<Person> getPersons() {
         String hql = "FROM Person";

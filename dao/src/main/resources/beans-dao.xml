@@ -29,13 +29,17 @@
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan">
+        <property name="annotatedClasses">
             <list>
-                <value>by.jd2.library.pojos</value>
+                <!--<value>by.jd2.library.pojos</value>-->
+                <value>by.jd2.library.pojos.Book</value>
+                <value>by.jd2.library.pojos.Category</value>
+                <value>by.jd2.library.pojos.Person</value>
             </list>
         </property>
 
         <property name="hibernateProperties">
+            <!--Здесь добавляем и кэш 2-го уровня, читай книгу-->
             <props>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="debug">true</prop>

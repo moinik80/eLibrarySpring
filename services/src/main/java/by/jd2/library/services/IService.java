@@ -1,3 +1,5 @@
+//interface with basic method
+
 package by.jd2.library.services;
 
 import java.io.Serializable;

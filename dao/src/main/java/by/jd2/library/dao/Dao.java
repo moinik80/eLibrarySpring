@@ -1,3 +1,5 @@
+//class Dao with basic methods
+
 package by.jd2.library.dao;
 
 import java.io.Serializable;

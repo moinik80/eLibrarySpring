@@ -1,9 +1,9 @@
-package by.jd2.library.services;
+//interface for PersonService
 
-import by.jd2.library.pojos.Person;
+package by.jd2.library.services;
 
 import java.util.List;
 
-public interface IPersonService {
-    List<Person> getPersons();
+public interface IPersonService<T> extends IService<T> {
+    List<T> getPersons();
 }

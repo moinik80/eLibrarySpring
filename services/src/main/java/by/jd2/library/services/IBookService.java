@@ -1,10 +1,10 @@
-package by.jd2.library.services;
+//interface for BookService
 
-import by.jd2.library.pojos.Book;
+package by.jd2.library.services;
 
 import java.util.List;
 
-public interface IBookService {
-    List<Book> getBooks();
+public interface IBookService<T> extends IService<T>{
+    List<T> getBooks();
     List<String> getAuthors();
 }

@@ -1,15 +1,14 @@
+//entity Person
+
 package by.jd2.library.pojos;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created by Иван
- * class entity  employee this library
- */
-
 @Entity
 public class Person implements Serializable {
+
+    //    for serializable
     private static final long serialVersionUID = 1L;
 
     @Id

@@ -1,3 +1,5 @@
+//interface for BookDao
+
 package by.jd2.library.dao;
 
 import java.util.List;

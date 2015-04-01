@@ -1,7 +1,7 @@
 package by.jd2.library.services;
 
-import by.jd2.library.dao.IPersonDao;
-import by.jd2.library.pojos.Person;
+import by.jd2.library.dao.ICategoryDao;
+import by.jd2.library.pojos.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -11,14 +11,14 @@ import java.util.List;
 
 @Service
 @Transactional(propagation = Propagation.REQUIRED)
-public class PersonService extends BaseService<Person> implements IPersonService<Person> {
+public class CategoryService extends BaseService<Category> implements ICategoryService<Category> {
 
     @Autowired
-    IPersonDao personDao;
+    ICategoryDao categoryDao;
 
-//return list Person, use methods for PersonDao
+//    return list Category, use CategoryDao
     @Override
-    public List<Person> getPersons() {
-        return personDao.getPersons();
+    public List<String> getCategories() {
+        return categoryDao.getAuthors();
     }
 }

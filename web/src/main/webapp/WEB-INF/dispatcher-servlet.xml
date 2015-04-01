@@ -10,12 +10,14 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+    <!--import beans configuration other modules-->
     <import resource="classpath*:beans-services.xml"/>
     <import resource="classpath*:beans-dao.xml"/>
     <!-- Activates various annotations to be detected in bean classes -->
 
     <mvc:annotation-driven/>
 
+    <!--where search beans with controllers-->
     <context:component-scan base-package="by.jd2.library.controller"/>
 
     <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
@@ -30,7 +32,7 @@
         <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
     </bean>
 
-
+<!--localisation-->
     <bean id="messageSource"
           class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="classpath:i18n/messages"/>

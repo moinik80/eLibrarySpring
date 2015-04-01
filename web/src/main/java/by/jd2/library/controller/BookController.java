@@ -1,3 +1,5 @@
+//controller for page with list books
+
 package by.jd2.library.controller;
 
 import by.jd2.library.pojos.Book;
@@ -15,12 +17,14 @@ public class BookController {
     @Autowired(required = true)
     private IBookService bookService;
 
+//    redirect to page with list books
     @RequestMapping(value = "/books", method = RequestMethod.GET)
     public String booksPage(ModelMap model) {
         fillModel(model);
         return "books";
     }
 
+// write in model list books
     private void fillModel(ModelMap model) {
         List<Book> list = bookService.getBooks();
         model.put("books", list);

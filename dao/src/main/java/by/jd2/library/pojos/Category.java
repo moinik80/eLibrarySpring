@@ -1,3 +1,5 @@
+//entity Category
+
 package by.jd2.library.pojos;
 
 import javax.persistence.*;
@@ -5,14 +7,11 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by Иван
- * class entity book`s category
- */
 
 @Entity
 public class Category implements Serializable {
 
+//    for serializable
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -22,7 +21,7 @@ public class Category implements Serializable {
     @Column
     private String categoryName;
 
-    @ManyToMany(mappedBy="categories")
+    @ManyToMany(mappedBy = "categories")
     private Set<Book> books = new HashSet<Book>();
 
     public Category() {
@@ -70,7 +69,6 @@ public class Category implements Serializable {
     public int hashCode() {
         int result = categoryId;
         result = 31 * result + categoryName.hashCode();
-        result = 31 * result + books.hashCode();
         return result;
     }
 }

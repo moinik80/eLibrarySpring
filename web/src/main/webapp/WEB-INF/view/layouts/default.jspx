@@ -10,7 +10,7 @@
     <jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
 
     <head>
-        <title>Добро пожаловать в библиотеку</title>
+        <tiles:insertAttribute  name="title"/>
         <link rel="stylesheet" type="text/css" href="../../../assests/css/web.css"/>
     </head>
     <body>

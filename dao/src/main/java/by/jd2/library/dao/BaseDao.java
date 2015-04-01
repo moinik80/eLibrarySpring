@@ -1,3 +1,5 @@
+//implements interface Dao with basic methods
+
 package by.jd2.library.dao;
 
 import org.apache.log4j.Logger;
@@ -18,6 +20,7 @@ public class BaseDao<T> implements Dao<T> {
         this.sessionFactory = sessionFactory;
     }
 
+//    return HibernateSession
     protected Session getSession(){
         return sessionFactory.getCurrentSession();
     }

@@ -1,3 +1,5 @@
+<!--tiles with footer-->
+
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
           xmlns="http://www.w3.org/1999/xhtml"
           xmlns:spring="http://www.springframework.org/tags"

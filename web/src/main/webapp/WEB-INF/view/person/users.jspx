@@ -1,3 +1,5 @@
+<!--page with list users-->
+
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
           xmlns:c="http://java.sun.com/jsp/jstl/core"
           xmlns:s="http://www.springframework.org/tags/form"
@@ -9,7 +11,19 @@
     <jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
 
     <div id="content">
-        ${users.fio}<br/>
+        <table class="output" align="center">
+            <tr class="t_head">
+                <td>№</td>
+                <td>Читатель</td>
+                <td>Статус</td>
+            </tr>
+            <c:forEach var="i" begin="0" end="${users.size() - 1}">
+                <tr class="t_row">
+                    <td>${i+1}</td>
+                    <td>${users[i].fio}</td>
+                    <td>${users[i].role}</td>
+                </tr>
+            </c:forEach>
+        </table>
     </div>
-
 </jsp:root>

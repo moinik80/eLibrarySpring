@@ -1,3 +1,5 @@
+//entity Book
+
 package by.jd2.library.pojos;
 
 //import org.hibernate.annotations.Cache;
@@ -11,6 +13,7 @@ import java.util.Set;
 //@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Book implements Serializable {
 
+//    for serializable
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -32,10 +35,10 @@ public class Book implements Serializable {
     @Column
     private String pathImg;
 
-    @ManyToMany(cascade={CascadeType.ALL})
-    @JoinTable(name="books_categories",
-            joinColumns={@JoinColumn(name="bookId")},
-            inverseJoinColumns={@JoinColumn(name="categoryId")})
+    @ManyToMany(cascade = {CascadeType.PERSIST})
+    @JoinTable(name = "books_categories",
+            joinColumns = {@JoinColumn(name = "bookId")},
+            inverseJoinColumns = {@JoinColumn(name = "categoryId")})
     private Set<Category> categories = new HashSet<Category>();
 
     public Book() {
@@ -122,8 +125,7 @@ public class Book implements Serializable {
         result = 31 * result + bookAuthor.hashCode();
         result = 31 * result + bookDescription.hashCode();
         result = 31 * result + bookText.hashCode();
-//        result = 31 * result + pathImg.hashCode();
-        result = 31 * result + categories.hashCode();
+        result = 31 * result + pathImg.hashCode();
         return result;
     }
 }

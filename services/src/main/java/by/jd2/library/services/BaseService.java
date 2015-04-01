@@ -1,3 +1,5 @@
+//class with basic method
+
 package by.jd2.library.services;
 
 import by.jd2.library.dao.Dao;

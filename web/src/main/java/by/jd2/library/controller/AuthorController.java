@@ -1,3 +1,5 @@
+//controller for page with list authors
+
 package by.jd2.library.controller;
 
 import by.jd2.library.pojos.Book;
@@ -15,14 +17,16 @@ public class AuthorController {
     @Autowired(required = true)
     private IBookService bookService;
 
+//    redirect to page with list authors
     @RequestMapping(value = "/authors", method = RequestMethod.GET)
     public String authorsPage(ModelMap model) {
         fillModel(model);
         return "authors";
     }
 
+//    write in model list authors
     private void fillModel(ModelMap model) {
-        List<Book> list = bookService.getBooks();
+        List<String> list = bookService.getAuthors();
         model.put("authors", list);
     }
 }
