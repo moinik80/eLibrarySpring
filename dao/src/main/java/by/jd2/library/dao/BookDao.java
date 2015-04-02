@@ -22,10 +22,25 @@ public class BookDao extends BaseDao<Book> implements IBookDao<Book> {
         return getSession().createQuery(hql).list();
     }
 
+    @Override
+    public List<Book> getBooks(String hql, int countResultInt, int startResult) {
+        Query query = getSession().createQuery(hql);
+        query.setFirstResult(startResult);
+        query.setMaxResults(countResultInt);
+        return query.list();
+    }
+
     //    return list authors from entity Book from database
     @Override
     public List<String> getAuthors() {
         String hql = "SELECT DISTINCT bookAuthor FROM Book";
         return getSession().createQuery(hql).list();
+    }
+
+//    return count book
+    @Override
+    public long getCountBooks() {
+        String hql = "SELECT count(bookName) FROM Book";
+        return (long) getSession().createQuery(hql).uniqueResult();
     }
 }

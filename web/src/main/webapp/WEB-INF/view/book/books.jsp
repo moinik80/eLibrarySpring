@@ -1,18 +1,21 @@
-<!--page with list books-->
+<%--page with list books--%>
 
-<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
-          xmlns="http://www.w3.org/1999/xhtml"
-          xmlns:c="http://java.sun.com/jsp/jstl/core"
-          xmlns:spring="http://www.springframework.org/tags"
-          version="2.0">
-    <jsp:output omit-xml-declaration="true"/>
-    <jsp:directive.page pageEncoding="UTF-8"
-                        contentType="text/html; UTF-8"/>
-    <div id="page">
-        <div id="content">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<div id="content">
+    <form action="/books/${sortRow}/${sortFlag}.form" method="post" id="pagination">
+
+        <input type="hidden" value="true" name="pagination">
+
+        <%--include select count result--%>
+        <%@ include file="../includedPages/selectCountResultInpage.jsp"%>
+
             <table class="output" align="center">
-                <!--button for redirect to form "add book"-->
-                <!--<c:if test="${sessionScope.person.role eq 'admin'}">-->
+
+                <%--button for redirect to form "add book"--%>
+                <%--<c:if test="${sessionScope.person.role eq 'admin'}">--%>
                 <tr>
                     <td style="background-color: #ffffff; height: 40px">
                         <a href="/books/add.form" style="text-decoration: none">
@@ -20,7 +23,7 @@
                         </a>
                     </td>
                 </tr>
-                <!--</c:if>-->
+                <%--</c:if>--%>
                 <tr class="t_head">
                     <td>№</td>
                     <td>
@@ -28,8 +31,8 @@
                             <div>
                                 <spring:message code="page.table_book"/>
                                 <c:if test="${sortRow eq 'authors'}">
-                                    <!--included sort-icons-->
-                                    <jsp:include page="../includedPages/sortsImg.jspx"/>
+                                    <%--included sort-icons--%>
+                                    <%@include file="../includedPages/sortsImg.jsp"%>
                                 </c:if>
                             </div>
                         </a>
@@ -39,8 +42,8 @@
                             <div>
                                 <spring:message code="page.table_author"/>
                                 <c:if test="${sortRow eq 'books'}">
-                                    <!--included sort-icons-->
-                                    <jsp:include page="../includedPages/sortsImg.jspx"/>
+                                    <%--included sort-icons--%>
+                                    <%@include file="../includedPages/sortsImg.jsp"%>
                                 </c:if>
                             </div>
                         </a>
@@ -52,7 +55,7 @@
                         <td>${books[i].bookName}</td>
                         <td>${books[i].bookAuthor}</td>
 
-                        <!--<c:if test="${sessionScope.person.role eq 'admin'}">-->
+                        <%--<c:if test="${sessionScope.person.role eq 'admin'}">--%>
                         <td style="background-color: #ffffff">
                             <a href="/books/edit/${books[i].bookId}.form" style="text-decoration: none;">
                                 <img src="../../../assests/img/edit.png"/>
@@ -63,10 +66,13 @@
                                 <img src="../../../assests/img/del.png"/>
                             </a>
                         </td>
-                        <!--</c:if>-->
+                        <%--</c:if>--%>
                     </tr>
                 </c:forEach>
             </table>
+            <div></div>
+                <%--include navigation for pagination1--%>
+            <%@ include file="../includedPages/navigationForPagination.jsp"%>
+            </form>
         </div>
-    </div>
-</jsp:root>
+

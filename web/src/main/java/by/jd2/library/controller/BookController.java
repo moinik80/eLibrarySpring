@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -18,17 +19,38 @@ public class BookController {
     @Autowired(required = true)
     private IBookService bookService;
 
+
 //    redirect to page with list books
-    @RequestMapping(value = "/books/{sortRow}/{sortFlag}", method = RequestMethod.GET)
-    public String booksPage(@PathVariable String sortRow, @PathVariable String sortFlag, ModelMap model) {
-        String parametersSort = sortRow.toUpperCase() + "_" + sortFlag.toUpperCase();
-        fillModel(model, parametersSort);
+    @RequestMapping(value = "/books/{sortRow}/{sortFlag}", method = {RequestMethod.POST, RequestMethod.GET})
+    public String booksPage(@PathVariable String sortRow,
+                            @PathVariable String sortFlag,
+                            @RequestParam(defaultValue = "5") String countResult,
+                            @RequestParam(defaultValue = "") String navBtn,
+                            @RequestParam(defaultValue = "1") String pageNumber,
+                            ModelMap model) {
+
+        if (!"".equals(navBtn)) {
+            sortFlag = ("up".equals(sortFlag))?"down":"up";
+            sortRow = ("books".equals(sortRow))?"authors":"books";
+        }
+
+        pageNumber = bookService.getPageNumber(pageNumber, countResult, navBtn)[0];
+        String countPages = bookService.getPageNumber(pageNumber, countResult, navBtn)[1];
+
+
+        fillModel(model, sortRow, sortFlag, countResult, pageNumber);
+
 //        request parameters for sorts
         sortFlag = ("up".equals(sortFlag))?"down":"up";
-        model.put("sortFlag", sortFlag);
-
         sortRow = ("books".equals(sortRow))?"authors":"books";
+
+//        send some parameters in page
+        model.put("countResult", countResult);
+        model.put("pageNumber", pageNumber);
+        model.put("countPages", countPages);
+        model.put("sortFlag", sortFlag);
         model.put("sortRow", sortRow);
+
 //      select links for sorts
         if ("authors".equals(sortRow)) {
             model.put("linkBooks", "/books/books/" + sortFlag + ".form");
@@ -46,6 +68,7 @@ public class BookController {
         return "addBook";
     }
 
+
 //    redirect to page edit book
     @RequestMapping(value = "books/edit/{bookId}", method = RequestMethod.GET)
     public String editBookPage(@PathVariable String bookId, ModelMap model) {
@@ -53,9 +76,10 @@ public class BookController {
         return "editBook";
     }
 
-// write in model list books
-    private void fillModel(ModelMap model, String parametersSort) {
-        List<Book> list = bookService.getBooks(parametersSort);
+
+    // write in model list books with pagination
+    private void fillModel(ModelMap model, String sortRow, String sortFlag, String countResult, String pageNumber) {
+        List<Book> list = bookService.getBooks(sortRow, sortFlag, countResult, pageNumber);
         model.put("books", list);
     }
 }

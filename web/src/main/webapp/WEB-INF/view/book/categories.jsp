@@ -1,12 +1,9 @@
-<!--page with list categories-->
+<%--page with list categories--%>
 
-<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
-          xmlns="http://www.w3.org/1999/xhtml"
-          xmlns:c="http://java.sun.com/jsp/jstl/core"
-          xmlns:spring="http://www.springframework.org/tags"
-          version="2.0">
-    <jsp:output omit-xml-declaration="true"/>
-    <jsp:directive.page pageEncoding="UTF-8" contentType="text/html; UTF-8"/>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
     <div id="content">
         <table class="output" align="center">
             <tr class="t_head">
@@ -21,4 +18,3 @@
             </c:forEach>
         </table>
     </div>
-</jsp:root>
