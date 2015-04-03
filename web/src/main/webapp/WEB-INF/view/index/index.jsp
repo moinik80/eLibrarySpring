@@ -8,11 +8,12 @@
 <div id="login">
 
     <%--message login error--%>
-    <h5>${sessionScope.error}</h5>
+    <h5>${error}</h5>
 
     <%--authorisation form--%>
-    <%--<form method = "post" action = "/j_spring_security_check">--%>
-    <form method = "post" action = "/welcome.form">
+        <spring:url var="authUrl" value="/j_spring_security_check" />
+    <form method = "post" action = "${authUrl}">
+    <%--<form method = "post" action = "/welcome.form">--%>
         <input type = "hidden" name = "page" value = "Login"/>
         <fieldset>
             <legend><spring:message code="page.log_in"/></legend>
