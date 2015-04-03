@@ -1,10 +1,8 @@
 package by.jd2.library.services;
 
-import by.jd2.library.dao.BaseDao;
 import by.jd2.library.dao.IBookDao;
 import by.jd2.library.pojos.Book;
 import by.jd2.library.selectHqlEnum.SelectHql;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -15,10 +13,15 @@ import java.util.List;
 
 @Service
 @Transactional(propagation = Propagation.REQUIRED)
-public class BookService extends BaseService<Book> implements IBookService<Book> {
+public class BookService implements IBookService<Book> {
 
     @Autowired
     IBookDao bookDao;
+
+    @Override
+    public Book get(Serializable id) {
+        return (Book) bookDao.get(Book.class, id);
+    }
 
     @Override
     public List<Book> getBooks(String sortRow, String sortFlag, String countResult, String pageNumber) {

@@ -16,11 +16,6 @@ public class BookDao extends BaseDao<Book> implements IBookDao<Book> {
         super(sessionFactory);
     }
 
-    @Override
-//    return list Book from database
-    public List<Book> getBooks(String hql) {
-        return getSession().createQuery(hql).list();
-    }
 
     @Override
     public List<Book> getBooks(String hql, int countResultInt, int startResult) {

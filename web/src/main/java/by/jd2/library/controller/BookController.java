@@ -20,12 +20,13 @@ import java.util.List;
 
 @Controller
 public class BookController {
+
     @Autowired(required = true)
-//    @Qualifier("bookService")
-//    private IService bookService;
     private IBookService bookService;
+
     @Autowired(required = true)
     private ICategoryService categoryService;
+
 
 
 //    redirect to page with list books
@@ -82,7 +83,7 @@ public class BookController {
     @RequestMapping(value = "/book/{bookId}", method = RequestMethod.GET)
     public String bookPage(ModelMap model, @PathVariable String bookId) {
         int id = Integer.parseInt(bookId);
-        Book book = (Book) bookService.get(Book.class, id);
+        Book book = (Book) bookService.get(id);
         model.put("book", book);
         return "book";
     }
@@ -95,6 +96,12 @@ public class BookController {
         return "editBook";
     }
 
+    //    redirect to page delete book
+    @RequestMapping(value = "books/del/{bookId}", method = RequestMethod.GET)
+    public String delBookPage(@PathVariable String bookId, ModelMap model) {
+        model.put("bookId", bookId);
+        return "delBook";
+    }
 
     // write in model list books with pagination
     private void fillModel(ModelMap model, String sortRow, String sortFlag, String countResult, String pageNumber) {
