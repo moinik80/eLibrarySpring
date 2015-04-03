@@ -4,7 +4,9 @@ package by.jd2.library.controller;
 
 import by.jd2.library.pojos.Book;
 import by.jd2.library.services.IBookService;
+import by.jd2.library.services.IService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,8 @@ import java.util.List;
 @Controller
 public class BookController {
     @Autowired(required = true)
+//    @Qualifier(bookService)
+//    private IService bookService;
     private IBookService bookService;
 
 
@@ -66,6 +70,15 @@ public class BookController {
     @RequestMapping(value = "/books/add", method = RequestMethod.GET)
     public String addBookPage() {
         return "addBook";
+    }
+
+    //    return book
+    @RequestMapping(value = "/book/{bookId}", method = RequestMethod.GET)
+    public String bookPage(ModelMap model, @PathVariable String bookId) {
+        int id = Integer.parseInt(bookId);
+        Book book = (Book) bookService.get(Book.class, id);
+        model.put("book", book);
+        return "book";
     }
 
 

@@ -4,9 +4,14 @@ package by.jd2.library.services;
 
 import by.jd2.library.dao.Dao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 
+@Service
+@Transactional(propagation = Propagation.REQUIRED)
 public class BaseService<T> implements IService<T> {
 
     private Dao<T> baseDao;

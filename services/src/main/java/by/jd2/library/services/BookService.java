@@ -19,14 +19,6 @@ public class BookService extends BaseService<Book> implements IBookService<Book>
     @Autowired
     IBookDao bookDao;
 
-//    return list Book, use BookDao
-    @Override
-    public List<Book> getBooks(String sortRow, String sortFlag) {
-        String parametersSort = sortRow.toUpperCase() + "_" + sortFlag.toUpperCase();
-        String hql = SelectHql.valueOf(parametersSort).getHql();
-        return bookDao.getBooks(hql);
-    }
-
     @Override
     public List<Book> getBooks(String sortRow, String sortFlag, String countResult, String pageNumber) {
         String parametersSort = sortRow.toUpperCase() + "_" + sortFlag.toUpperCase();

@@ -56,7 +56,11 @@
                 <c:forEach var="i" begin="0" end="${books.size() - 1}">
                     <tr class="t_row">
                         <td>${i + 1}</td>
-                        <td>${books[i].bookName}</td>
+                        <td>
+                            <a href="/book/${books[i].bookId}.form">
+                                    ${books[i].bookName}
+                            </a>
+                        </td>
                         <td>${books[i].bookAuthor}</td>
 
                         <%--added button 'edit' and delete (only for admin)--%>
