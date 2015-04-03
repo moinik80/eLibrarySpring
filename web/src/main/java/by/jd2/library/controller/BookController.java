@@ -3,7 +3,9 @@
 package by.jd2.library.controller;
 
 import by.jd2.library.pojos.Book;
+import by.jd2.library.pojos.Category;
 import by.jd2.library.services.IBookService;
+import by.jd2.library.services.ICategoryService;
 import by.jd2.library.services.IService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,9 +21,11 @@ import java.util.List;
 @Controller
 public class BookController {
     @Autowired(required = true)
-//    @Qualifier(bookService)
+//    @Qualifier("bookService")
 //    private IService bookService;
     private IBookService bookService;
+    @Autowired(required = true)
+    private ICategoryService categoryService;
 
 
 //    redirect to page with list books
@@ -68,7 +72,9 @@ public class BookController {
 
 //    redirect to form "add book"
     @RequestMapping(value = "/books/add", method = RequestMethod.GET)
-    public String addBookPage() {
+    public String addBookPage(ModelMap model) {
+        List<Category> categories = categoryService.getCategories();
+        model.put("categories", categories);
         return "addBook";
     }
 

@@ -12,6 +12,7 @@ import java.io.Serializable;
 
 @Service
 @Transactional(propagation = Propagation.REQUIRED)
+
 public class BaseService<T> implements IService<T> {
 
     private Dao<T> baseDao;

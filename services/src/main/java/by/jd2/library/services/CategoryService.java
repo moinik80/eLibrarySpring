@@ -18,7 +18,12 @@ public class CategoryService extends BaseService<Category> implements ICategoryS
 
 //    return list Category, use CategoryDao
     @Override
-    public List<String> getCategories() {
-        return categoryDao.getAuthors();
+    public List<String> getCategoriesName() {
+        return categoryDao.getCategoriesName();
+    }
+
+    @Override
+    public List<Category> getCategories() {
+        return categoryDao.getCategories();
     }
 }

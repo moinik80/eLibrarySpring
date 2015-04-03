@@ -16,8 +16,14 @@ public class CategoryDao extends BaseDao<Category> implements ICategoryDao<Categ
 
 //    return list Category from database
     @Override
-    public List<String> getAuthors() {
+    public List<String> getCategoriesName() {
         String hql = " SELECT DISTINCT categoryName FROM Category";
+        return getSession().createQuery(hql).list();
+    }
+
+    @Override
+    public List<Category> getCategories() {
+        String hql = " FROM Category";
         return getSession().createQuery(hql).list();
     }
 }

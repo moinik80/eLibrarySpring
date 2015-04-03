@@ -26,7 +26,7 @@ public class CategoryController {
 
 //    write in model list categories
     private void fillModel(ModelMap model) {
-        List<String> list = categoryService.getCategories();
+        List<String> list = categoryService.getCategoriesName();
         model.put("categories", list);
     }
 }

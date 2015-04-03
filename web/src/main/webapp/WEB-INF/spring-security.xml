@@ -11,9 +11,9 @@
     <security:http auto-config="true" use-expressions="true">
 
         <!--users permissions-->
+
         <security:intercept-url pattern="/index.form" access="permitAll"/>
         <security:intercept-url pattern="/**" access="hasAnyRole('user', 'admin')"/>
-        <!--<security:intercept-url pattern="/*" access="hasRole('admin')"/>-->
 
         <!--login form-->
         <security:form-login
