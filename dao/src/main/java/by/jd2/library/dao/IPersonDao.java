@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface IPersonDao<T> extends Dao<T> {
     List<T> getPersons();
+    T getPersonByEmail(String email);
 }

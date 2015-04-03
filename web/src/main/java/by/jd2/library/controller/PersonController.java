@@ -25,6 +25,12 @@ public class PersonController {
         return "users";
     }
 
+    //    users profile
+    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    public String profilePage() {
+        return "profile";
+    }
+
 //  write in model list books
     private void fillModel(ModelMap model) {
         List<Person> list = personService.getPersons();

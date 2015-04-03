@@ -29,6 +29,7 @@
       <tiles.version>2.2.2</tiles.version>
       <spring.security>3.2.5.RELEASE</spring.security>
       <jstl.version>1.2</jstl.version>
+      <servlet-api.version>2.5</servlet-api.version>
   </properties>
 
     <build>
@@ -231,6 +232,12 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.5.6</version>
+        </dependency>
+<!--Servlet-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet-api.version}</version>
         </dependency>
 
         <!--Junit-->

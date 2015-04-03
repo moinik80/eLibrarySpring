@@ -21,4 +21,9 @@ public class PersonService extends BaseService<Person> implements IPersonService
     public List<Person> getPersons() {
         return personDao.getPersons();
     }
+
+    @Override
+    public Person getPersonByEmail(String email) {
+        return (Person) personDao.getPersonByEmail(email);
+    }
 }
